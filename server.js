@@ -1,5 +1,6 @@
 import express from "express";
 import authRoutes from "./routes/authRoute.js";
+import feedbackRoutes from "./routes/feedbackRoutes.js";
 import cors from "cors";
 import connectDB from "./config/db.js";
 
@@ -32,6 +33,7 @@ app.get("/", (req, res) => {
 
 // listModels();
 app.use("/auth", authRoutes); // Mounting auth routes
+app.use("/feedback", feedbackRoutes); // Mounting feedback routes
 
 const PORT = 3000;
 app.listen(PORT, () => {
